@@ -6,6 +6,10 @@ namespace CalculadoraMuitoManeira.Model.Calculadora
 {
     public class Calculadora : ICalculadora
     {
+        private static Calculadora _instance;
+
+        private Calculadora() { }
+
         public ResponseDTO Calcular(RequestDTO requestDTO)
         {
             var fabrica = new OperacaoFabrica();
@@ -23,6 +27,15 @@ namespace CalculadoraMuitoManeira.Model.Calculadora
             return new ResponseDTO(result);
         }
 
-        
+        public static Calculadora GetInstance()
+        {
+            if (_instance == null)
+            {
+                _instance = new Calculadora();
+            }
+            return _instance;
+        }
+
+
     }
 }

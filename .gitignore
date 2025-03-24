@@ -6,6 +6,9 @@
 # dotenv files
 .env
 
+# replit files
+.replit
+
 # User-specific files
 *.rsuser
 *.suo

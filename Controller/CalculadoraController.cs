@@ -8,7 +8,7 @@ namespace CalculadoraMuitoManeira.Controller
     {
         public ResponseDTO Calcular(RequestDTO requestDTO)
         {
-            ICalculadora calculadora = new Calculadora();
+            ICalculadora calculadora = Calculadora.GetInstance();
 
             return calculadora.Calcular(requestDTO);
         }

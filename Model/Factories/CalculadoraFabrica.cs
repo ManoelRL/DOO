@@ -4,9 +4,20 @@ namespace CalculadoraMuitoManeira.Model.Factories
 {
     public class CalculadoraFabrica : AbstractFactory<ICalculadora>
     {
-        public CalculadoraFabrica()
+        private static CalculadoraFabrica instance;
+
+        private CalculadoraFabrica()
         {
             base.namespaceBase = base.namespaceBase + ".Calculadora.";
+        }
+
+        public static CalculadoraFabrica GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new CalculadoraFabrica();
+            }
+            return instance;
         }
     }
 }
